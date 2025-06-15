@@ -90,7 +90,7 @@ const Home = () => {
                 style={{ position: "relative" }}
               >
                 <img
-                  src="/src/assets/images/profile.png"
+                  src="/images/profile.png"
                   alt="Harsh Joshi"
                   className="profile-image"
                 />
