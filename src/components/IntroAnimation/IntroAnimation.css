@@ -1,0 +1,214 @@
+.cyberpunk-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  font-family: 'Rajdhani', 'Courier New', sans-serif;
+}
+
+.cyber-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridScroll 10s linear infinite;
+}
+
+.scanlines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 255, 255, 0.05) 0.5%,
+      transparent 1%
+    );
+  pointer-events: none;
+}
+
+.loading-content {
+  text-align: center;
+  z-index: 2;
+  color: #00f7ff;
+  width: 80%;
+  max-width: 500px;
+}
+
+.hologram-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #00f7ff;
+  margin: 0 auto 30px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+  animation: circlePulse 2s infinite alternate;
+}
+
+.inner-circle {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 2px dashed #00f7ff;
+  top: 10%;
+  left: 10%;
+  animation: rotate 10s linear infinite;
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.progress-container {
+  width: 100%;
+  height: 20px;
+  background: rgba(0, 247, 255, 0.1);
+  border: 1px solid #00f7ff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00f7ff, #ff00f7);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  line-height: 20px;
+  font-size: 0.8rem;
+}
+
+.status-message {
+  font-family: 'Courier New', monospace;
+  text-align: left;
+  min-height: 20px;
+}
+
+.welcome-content {
+  animation: fadeIn 1s ease-out;
+}
+
+.neon-text {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #00f7ff,
+    0 0 40px #00f7ff;
+  margin-bottom: 20px;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.cyber-subtitle {
+  color: #ff00f7;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 0, 247, 0.7);
+}
+
+.cyber-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f7ff, transparent);
+  margin: 20px 0;
+}
+
+.pulse-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 247, 255, 0.8), transparent 70%);
+  margin: 30px auto;
+  animation: pulse 2s infinite;
+}
+
+.binary-rain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.binary-rain span {
+  position: absolute;
+  color: rgba(0, 247, 255, 0.3);
+  font-size: 1rem;
+  animation: binaryFall linear infinite;
+}
+
+@keyframes gridScroll {
+  from { background-position: 0 0; }
+  to { background-position: 30px 30px; }
+}
+
+@keyframes circlePulse {
+  from { box-shadow: 0 0 20px rgba(0, 247, 255, 0.5); }
+  to { box-shadow: 0 0 40px rgba(0, 247, 255, 0.8); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #00f7ff,
+      0 0 40px #00f7ff;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+@keyframes binaryFall {
+  from { transform: translateY(-100px); }
+  to { transform: translateY(100vh); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 2.5rem;
+  }
+  
+  .hologram-circle {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -1,0 +1,72 @@
+.tech-loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fallback-loader {
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+  padding: 2rem;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 8px;
+  background: rgba(0, 20, 10, 0.5);
+}
+
+.loading-bar {
+  position: absolute;
+  bottom: 20%;
+  width: 60%;
+  height: 4px;
+  background: rgba(0, 255, 136, 0.2);
+  border-radius: 2px;
+}
+
+.loading-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff88, #00ffff);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.loader-error-fallback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #ff5555;
+  font-family: 'Courier New', monospace;
+  z-index: 9999;
+}
+
+.loader-error-fallback button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 85, 85, 0.2);
+  color: #ff5555;
+  border: 1px solid #ff5555;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loader-error-fallback button:hover {
+  background: rgba(255, 85, 85, 0.4);
+}

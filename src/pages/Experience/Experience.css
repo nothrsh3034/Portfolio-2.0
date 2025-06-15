@@ -1,0 +1,128 @@
+/* pages/Experience/Experience.css */
+.experience-section {
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  padding: var(--space-md) 0;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-content {
+  display: flex;
+  gap: var(--space-md);
+  background: var(--gradient-card);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.timeline-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary);
+}
+
+.timeline-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.timeline-details {
+  flex: 1;
+}
+
+.timeline-role {
+  color: var(--primary);
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-company {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-description {
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-item.left::after {
+  right: -12px;
+}
+
+.timeline-item.right::after {
+  left: -12px;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 31px;
+  }
+
+  .timeline-item {
+    padding-left: 70px;
+    padding-right: 0;
+  }
+
+  .timeline-item::after {
+    left: 20px;
+  }
+
+  .timeline-content {
+    flex-direction: column;
+    padding: var(--space-md);
+  }
+
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .timeline-icon img {
+    width: 24px;
+    height: 24px;
+  }
+}
